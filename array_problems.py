@@ -205,7 +205,7 @@ def longest_subarray_with_sum_k(arr, k):
         if prefix_sum == k:
             max_length = i + 1
         
-        if prefix_sum in prefix_sum_map:
+        if (prefix_sum - k) in prefix_sum_map:
             max_length = max(max_length, i - prefix_sum_map[prefix_sum- k] )
         if prefix_sum not in prefix_sum_map:
             prefix_sum_map[prefix_sum] = i
@@ -217,3 +217,22 @@ arr = [1, -1, 5, -2, 3]
 k = 3
 
 print(longest_subarray_with_sum_k(arr, k))
+
+#2sum problem
+
+def twosum(arr, target):
+    seen = {}
+    for i, num in enumerate(arr):
+        complete = target - num
+
+        if complete in seen:
+            return (seen[complete], i)
+        seen[num] = i
+    return False
+
+arr = [2, 3, 6, 4, 1]
+
+target = 10
+
+print(twosum(arr, target))
+
