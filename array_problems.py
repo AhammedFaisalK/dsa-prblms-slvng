@@ -196,43 +196,69 @@
 # print(longest_subarray_sum_k(arr, k))
         
 #finding the longest subarray with sum K (works with both positive and negative numbers).
-def longest_subarray_with_sum_k(arr, k):
-    prefix_sum_map = {}
-    prefix_sum = 0
-    max_length = 0
-    for i in range(len(arr)):
-        prefix_sum += arr[i]
-        if prefix_sum == k:
-            max_length = i + 1
+# def longest_subarray_with_sum_k(arr, k):
+#     prefix_sum_map = {}
+#     prefix_sum = 0
+#     max_length = 0
+#     for i in range(len(arr)):
+#         prefix_sum += arr[i]
+#         if prefix_sum == k:
+#             max_length = i + 1
         
-        if (prefix_sum - k) in prefix_sum_map:
-            max_length = max(max_length, i - prefix_sum_map[prefix_sum- k] )
-        if prefix_sum not in prefix_sum_map:
-            prefix_sum_map[prefix_sum] = i
+#         if (prefix_sum - k) in prefix_sum_map:
+#             max_length = max(max_length, i - prefix_sum_map[prefix_sum- k] )
+#         if prefix_sum not in prefix_sum_map:
+#             prefix_sum_map[prefix_sum] = i
             
-    return max_length
+#     return max_length
 
 
-arr = [1, -1, 5, -2, 3]
-k = 3
+# arr = [1, -1, 5, -2, 3]
+# k = 3
 
-print(longest_subarray_with_sum_k(arr, k))
+# print(longest_subarray_with_sum_k(arr, k))
 
 #2sum problem
 
-def twosum(arr, target):
-    seen = {}
-    for i, num in enumerate(arr):
-        complete = target - num
+# def twosum(arr, target):
+#     seen = {}
+#     for i, num in enumerate(arr):
+#         complete = target - num
 
-        if complete in seen:
-            return (seen[complete], i)
-        seen[num] = i
-    return False
+#         if complete in seen:
+#             return (seen[complete], i)
+#         seen[num] = i
+#     return False
 
-arr = [2, 3, 6, 4, 1]
+# arr = [2, 3, 6, 4, 1]
 
-target = 10
+# target = 10
 
-print(twosum(arr, target))
+# print(twosum(arr, target))
 
+
+def sort_012(arr):
+    low = 0
+    mid = 0
+    high = len(arr) - 1
+
+    while mid <= high:
+        if arr[mid] == 0:
+            arr[low], arr[mid] = arr[mid], arr[low]
+
+            low += 1
+            mid += 1
+
+        elif arr[mid] == 1:
+            mid += 1
+            
+        else:
+            arr[mid], arr[high] = arr[high], arr[mid]
+            high -= 1
+
+    return arr
+
+
+arr = [2, 1, 0, 1, 2]
+
+print(sort_012(arr))
