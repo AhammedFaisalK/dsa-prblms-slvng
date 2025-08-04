@@ -262,3 +262,28 @@ def sort_012(arr):
 arr = [2, 1, 0, 1, 2]
 
 print(sort_012(arr))
+
+#Majority Element > n/2 times
+
+# Boyer-Moore Voting Algorithm
+
+def majority_element(nums):
+    count = 0
+    candidate = None
+
+    for num in nums:
+
+        if count == 0:
+            candidate = num
+
+        count += (1 if candidate == num else -1)
+
+    if nums.count(candidate) > (num / 2):
+        return candidate
+    else:
+        return -1
+
+
+arr = [2, 3, 1, 3, 1, 3, 3, 2]
+
+print(majority_element(arr))
