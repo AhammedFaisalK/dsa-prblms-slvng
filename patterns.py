@@ -140,24 +140,118 @@
 
 
 
-def floyds_triangle(n):
-    count = 1
-    for i in range(1, n + 1):
-        for j in range(1, i + 1):
-            print(count, end=" ")
-            count += 1
-        print()
+# def floyds_triangle(n):
+#     count = 1
+#     for i in range(1, n + 1):
+#         for j in range(1, i + 1):
+#             print(count, end=" ")
+#             count += 1
+#         print()
 
 
-floyds_triangle(5)
+# floyds_triangle(5)
 
 
-def palindromic_triangle(n):
-    for row in range(1, n + 1):
-        print(" " * (n - row), end="")               
+# def palindromic_triangle(n):
+#     for row in range(1, n + 1):
+#         print(" " * (n - row), end="")               
         
-        for j in range(1, row+ 1):
-            print(j, end="")
-        for i in range(row - 1, 0, -1):
-            print(i, end="")
-        print()
+#         for j in range(1, row+ 1):
+#             print(j, end="")
+#         for i in range(row - 1, 0, -1):
+#             print(i, end="")
+#         print()
+
+
+# def mirror_number_pyramid(n):
+#     for row in range(1, n+1):
+#         print(" " * (n -row) + f"{row} "* row)
+    
+# mirror_number_pyramid(5)
+
+# def butterfly_pattern(n):
+#     for i in range(1, n + 1):
+#         print("*" * i + " " * (2 * ( n - i ))+ "*" * i)
+#     for j in range(n -1, -1, -1):
+#         print("*" * j + " " * (2 * (n - j) )+ "*" * j)
+
+# butterfly_pattern(4)
+
+# def zig_zag(r, c):
+#     if r <=0  or  c <= 0 :
+#         return
+#     cycle = 2 * (r - 1) if r > 1 else 1
+#     for row in range(r):
+#         for col in range(c):
+#             if col % cycle == row or col % cycle == cycle - row :
+#                 print("*", end="")
+#             else:
+#                 print(" ", end="")
+#         print()
+
+
+# zig_zag(3, 9)
+
+
+# def sandglass(n):
+#     for row in range(n):
+#         print(" " * row  + "*" * (2  *( n - row ) - 1) )
+
+#     for j in range(n - 2, -1 , -1 ):
+#         print(" " * j  + "*" * (2  *( n - j ) - 1) )
+
+
+
+# sandglass(5)
+
+
+# def numeric_hollow_pyramid(n):
+#     if n <= 0:
+#         return
+#     for i in range(1, n + 1):
+#         line = " " * ( n - i)
+#         if i == 1:
+#             line += "1"
+#         elif i < n:
+#             spaces = 2 * i -3
+#             line +=  "1" + " " * spaces + str(i)
+#         else:
+#             line += " ".join(str(x) for x in range(1, n + 1))
+#         print(line)
+
+# numeric_hollow_pyramid(5)
+
+
+# def full_numeric_pyramid(n):
+#     for i in range(1,n + 1):
+#         print(" " * (n - i), end="")
+#         for j in range(1, i + 1):
+#             print(j, end=" ")
+#         print()
+
+# full_numeric_pyramid(5)
+
+
+# def inverted_numeric_pyramid(n):
+#     for i in range(n, -1 , -1):
+#         print(" " * (n -i), end="")
+#         for j in range(1, i + 1):
+#             print(j, end=" ")
+#         print()
+
+# inverted_numeric_pyramid(5)
+
+
+def inverted_hollow_pyramid(n):
+    for i in range(n, 0, -1):
+        if i == n:
+            print(" ".join(str(x) for x in range(1, n +1)))
+        elif i == 1:
+            print(" " * (n - 1) + "1")
+        else:
+            outside_space = " " * (n - i)
+            inside_space = " " * (2 * i - 3)
+            print(outside_space + "1" + inside_space + str(i))
+
+inverted_hollow_pyramid(5)
+
