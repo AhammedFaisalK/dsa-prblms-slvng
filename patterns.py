@@ -242,16 +242,76 @@
 # inverted_numeric_pyramid(5)
 
 
-def inverted_hollow_pyramid(n):
-    for i in range(n, 0, -1):
-        if i == n:
-            print(" ".join(str(x) for x in range(1, n +1)))
-        elif i == 1:
-            print(" " * (n - 1) + "1")
-        else:
-            outside_space = " " * (n - i)
-            inside_space = " " * (2 * i - 3)
-            print(outside_space + "1" + inside_space + str(i))
+# def inverted_hollow_pyramid(n):
+#     for i in range(n, 0, -1):
+#         if i == n:
+#             print(" ".join(str(x) for x in range(1, n +1)))
+#         elif i == 1:
+#             print(" " * (n - 1) + "1")
+#         else:
+#             outside_space = " " * (n - i)
+#             inside_space = " " * (2 * i - 3)
+#             print(outside_space + "1" + inside_space + str(i))
 
-inverted_hollow_pyramid(5)
+# inverted_hollow_pyramid(5)
 
+
+# Centered Numeric Diamond
+
+
+# def centered_numeric_diamond(n):
+#     for i in range(1, n+1):
+#         print(" " * (n - i), end="")
+#         for j in range(1, i + 1):
+#             print(j, end=" ")
+#         print()
+#     for i in range(n - 1, 0, -1):
+#         print(" " * (n - i), end="")
+#         for j in range(1, i + 1):
+#             print(j, end=" ")
+#         print()
+
+# centered_numeric_diamond(5)
+
+
+# Hollow Numeric Diamond
+# def hollow_numeric_diamond(n):
+#     for i in range(1, n + 1):
+#         if i == 1:
+#             print(" " * (n - i) + "1")
+#         else:
+#             print(" " * (n -i ) + "1" + " " * (2 * i - 3) + str(i))
+#     for j in range(n -1, 0, -1):
+#         if j == 1:
+#             print(" " * (n - j) + "1")
+#         else:
+#             print(" " * (n -j ) + "1" + " " * (2 * j - 3) + str(j))
+
+
+
+# hollow_numeric_diamond(5)
+
+# Hollow Square / Hollow Rectangle Pattern
+
+# def hollow_square_(n):
+#     for i in range(n):
+#         for j in range(n):
+#             if i == 0 or i == n-1 or j == 0 or j == n-1:
+#                 print("*", end=" ")
+#             else:
+#                 print(" ", end=" ")
+#         print()
+
+# hollow_square_(5)
+
+
+def hollow_rect_pattern(rows, cols):
+    for i in range(rows):
+        for j in range(cols):
+            if i == 0 or i == rows-1 or j == 0 or j == cols - 1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+
+hollow_rect_pattern(4, 10)
