@@ -112,6 +112,18 @@
 
 # centrealigned_pascals_triangle(2)
 
+# def pascals_triangle(n):
+#     prev = [1]
+#     for row in range(n):
+#         print(" " * (n - row), " ".join(map(str, prev)))
+#         new = [1]
+#         for i in range(1, len(prev)):
+#             new.append(prev[i-1] + prev[i])
+#         new.append(1)
+#         prev = new
+
+# pascals_triangle(5)
+
 
 
 # 1
@@ -139,6 +151,18 @@
 #     print(" ".join(map(str, row)))
 
 
+def number_triangle(n):
+    m = n -1
+    first_num = 1
+    for r in range(1, n + 1):
+        if r > 1:
+            first_num += m - (r -2)
+        row = [first_num]
+        for j in range(2, r + 1):
+            row.append(row[-1] - (m - (j - 2)))
+        print(*row)
+
+number_triangle(5)
 
 # def floyds_triangle(n):
 #     count = 1
@@ -305,13 +329,13 @@
 # hollow_square_(5)
 
 
-def hollow_rect_pattern(rows, cols):
-    for i in range(rows):
-        for j in range(cols):
-            if i == 0 or i == rows-1 or j == 0 or j == cols - 1:
-                print("*", end=" ")
-            else:
-                print(" ", end=" ")
-        print()
+# def hollow_rect_pattern(rows, cols):
+#     for i in range(rows):
+#         for j in range(cols):
+#             if i == 0 or i == rows-1 or j == 0 or j == cols - 1:
+#                 print("*", end=" ")
+#             else:
+#                 print(" ", end=" ")
+#         print()
 
-hollow_rect_pattern(4, 10)
+# hollow_rect_pattern(4, 10)
