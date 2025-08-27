@@ -103,3 +103,16 @@ def is_prime(n):
     return True
 
 print(is_prime(5))
+
+
+# def gcd(a, b):
+#     while b != 0:
+#         a, b = b, a % b 
+#     return a
+
+# print(gcd(35, 56))# def gcd(a, b):
+#     while b != 0:
+#         a, b = b, a % b 
+#     return a
+
+# print(gcd(35, 56))
