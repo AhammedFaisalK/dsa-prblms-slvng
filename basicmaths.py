@@ -47,7 +47,7 @@ print(arm_strong_numbers(test))
 
 
 # def print_all_divisors(n):
-#     for i in range(1, ):
+#     for i in range(1, n):
 #         if n % i == 0:
 #             print(i, end=" ")
 #     print()
@@ -65,7 +65,7 @@ def print_dvisors(n):
             divisors.add(n // i)
     return sorted(divisors)
 
-print(print_dvisors(34))
+print(print_dvisors(40))
 
 
 
